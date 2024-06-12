@@ -20,15 +20,17 @@ let item5=new CreateItem(5,"RelyOn","T-shirts","https://siphokuhlenyana.github.i
 let cart=[item1,item2,item3,item4,item5]
 
 localStorage.setItem('Cart',JSON.stringify(cart))
-let div=document.querySelector("#prod")
+
 
 let heading=document.querySelector('#heading')
 heading.textContent= "Products"
 
 
-
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
 cart.forEach(item =>{
+    let div=document.querySelector("#prod")
     div.innerHTML += `
     <div class="card" id="card" style="width: 18rem;height: 18rem;">
     <img id="images" src='${item.image}'>
@@ -67,33 +69,54 @@ let btn=document.querySelector("#search")
 
 // }
 
-btn.addEventListener('click',()=>{
-    let searchProd=input.value
-    let inputedItems=cart.filter(cart=>{
-        if(searchProd == true){
-              cart.id. toString().includes(searchProd)||
-        cart.name.includes(searchProd)||
-        cart.category.includes(searchProd)||
-        cart.price.toString().includes(searchProd)
-        }else{
-            alert (" Please insert the correct item you are looking for .You can search by its name / category /ID / its price ! .")
-        }
+// btn.addEventListener('click',()=>{
+//     let searchProd=input.value
+//     let inputedItems=cart.filter(cart=>{
+//         if(searchProd.innerText == true){
+//               cart.id. toString().includes(searchProd)||
+//         cart.name.includes(searchProd)||
+//         cart.category.includes(searchProd)||
+//         cart.price.toString().includes(searchProd)
+//         }else{
+//             alert (" Please insert the correct item you are looking for .You can search by its name / category /ID / its price ! .")
+//         }
       
-    })
-    let tbody=document.querySelector('tbody')
-    tbody.innerHTML =''
-    inputedItems.map(cart=>{
-        tbody.innerHTML += `
-        <tr>
-        <td>${cart.id}</td?
-        <td>${cart.name}</td>
-        <td>$${cart.category}</td>
-        <td><img src='${cart.image}'></td>
-        <td>${cart.description}</td>
-        <td>${cart.price}</td>
+//     })
+let cat=cart.includes(input.textContent)
 
-        </tr>
+btn.addEventListener('click',()=>searchProd())
+    function searchProd(cart){
+  
+        if(input.textContent == +true){
+         for(cat of cart){
+           cart.map().filter(cat=> input.textContent== +cat)
+          return(cat)
+         }
+        } else{
+          alert ('Please insert the correct item you are looking for .You can search by its name / category /ID / its price ! .')
+        }
         
-        `
-    })
-})
+      }
+      searchProd()
+
+
+
+
+
+
+    // let tbody=document.querySelector('tbody')
+    // tbody.innerHTML =''
+    // inputedItems.map(cart=>{
+    //     tbody.innerHTML += `
+    //     <tr>
+    //     <td>${cart.id}</td?
+    //     <td>${cart.name}</td>
+    //     <td>$${cart.category}</td>
+    //     <td><img src='${cart.image}'></td>
+    //     <td>${cart.description}</td>
+    //     <td>${cart.price}</td>
+
+    //     </tr>
+        
+    //     `
+    // })
