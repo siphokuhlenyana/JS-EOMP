@@ -12,7 +12,7 @@ body{
     font-style: normal;
   background-color: white;
   /* max-width:  100%; */
-  width: 100vw;
+  max-width: 100vw;
   /* height: 250vh; */
   
 }
@@ -77,6 +77,7 @@ body{
     background-repeat:no-repeat; 
     padding: 300px 0;
     height: 1vh;
+    max-width: 100vw;
 }
 #icons{
     margin-right: 50px;
@@ -176,6 +177,7 @@ margin-left: 750px;
 #main .container-fluid{
     background-image: linear-gradient(rgb(231, 16, 16) ,black);
     height: 5vh;
+    max-width: 100vw;
 }
 
 #Products{
@@ -189,14 +191,15 @@ margin-left: 750px;
     height: 250px; */
     height: 400vh;
     background-image: linear-gradient(rgb(231, 16, 16) ,black);
+    max-width: 300vw;
 }
 #sort ,#searchItems ,#search{
-    width: 250px;
+    width: 350px;
     height: 30px;
      /* display: flex;
     align-items: center;  */
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 0;
     padding-left: 100px;
     background-color: black;
     color: aliceblue;
@@ -263,14 +266,32 @@ margin-left: 750px;
     align-items: center;
     justify-content: center;
     margin-top: 5px; 
+    animation: slide 2s infinite linear;
+    color-scheme: red rgba(255, 255, 255, 0.585);
+
+   
+   width: 150px;
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(-60%);
+}
 }
 .card{
     background-color: black;
-    height: 200px;
+    height: 150px;
 }
 
 #card{
     margin: 50px ;
+}
+
+#images{
+    height:20rem ;
 }
 
 footer{
@@ -295,6 +316,7 @@ footer{
     align-items: center;
     justify-content: center;
     background-image: -moz-linear-gradient(red,black);
+    max-width: 100vw;
 }
 
 #pic1 ,#pic2,#pic3{
@@ -302,4 +324,26 @@ footer{
 }
 #contact{
     margin: 0;
+}
+
+#description{
+    color: aliceblue;
+}
+
+#price{
+    color:red;
+    font-weight: 400;
+}
+
+#stars{
+    color: gold;
+    width: 150px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 50px;
+}
+.nav-link.active{
+    background-color: rgba(255, 0, 0, 0.77);
+    border-radius: 30px;
 }
