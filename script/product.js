@@ -19,6 +19,7 @@ let item5=new CreateItem(5,"RelyOn","T-shirts","https://siphokuhlenyana.github.i
 
 let cart=[item1,item2,item3,item4,item5]
 
+
 localStorage.setItem('Cart',JSON.stringify(cart))
 
 
@@ -29,8 +30,11 @@ heading.textContent= "Catelogue"
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
-cart.forEach(item =>{
-    let div=document.querySelector("#prod")
+
+ function displayFiltered(c){
+   let div=document.querySelector("#prod")
+   div.innerHTML = ''  
+  c.forEach(item =>{
     div.innerHTML += `
     <div class="card" id="card" style="width: 18rem;height: 45rem;">
     <img id="images" src='${item.image}'>
@@ -62,72 +66,89 @@ cart.forEach(item =>{
 
   `
   })
-
-//  
-
-let view=document.querySelectorAll('#view')
-// view.addEventListener('click',(event))
-
-let input=document.querySelector('input')
-let button=document.querySelector("#sort")
-let btn=document.querySelector("#search")
+ }
+  displayFiltered(cart)
 
 
 
-// function searchItems(){
-// let inputedItems=input.value
 
+// Targeting the list items under the filter btn
+          let filterByKitchen=document.querySelector("#kitchen")
+          let filterByDress=document.querySelector('#dresses')
 
-// }
+// When I click on it
+      filterByDress.addEventListener('click',(event)=>{
+        let d =event.target.getAttribute('value')
+  writeData(d)
+  })
+        filterByKitchen.addEventListener('click',(event)=>{
+        let k= event.target.getAttribute('value')
+        writeData(k)
+        })
 
-// btn.addEventListener('click',()=>{
-//     let searchProd=input.value
-//     let inputedItems=cart.filter(cart=>{
-//         if(searchProd.innerText == true){
-//               cart.id. toString().includes(searchProd)||
-//         cart.name.includes(searchProd)||
-//         cart.category.includes(searchProd)||
-//         cart.price.toString().includes(searchProd)
-//         }else{
-//             alert (" Please insert the correct item you are looking for .You can search by its name / category /ID / its price ! .")
-//         }
+// Displays the filtered data
+  function writeData(i){
+      let filtered=cart.filter(item=>item.category == i)
+  displayFiltered(filtered)
+}
+  //  resets the page 
+    let resetBtn=document.querySelector('#reset')
+          resetBtn.addEventListener('click',()=>{
+       displayFiltered(cart)
       
-//     })
-let cat=cart.includes(input.textContent)
-
-btn.addEventListener('click',()=>searchProd())
-    function searchProd(cart){
-  
-        if(input.textContent == +true){
-         for(cat of cart){
-           cart.map().filter(cat=> input.textContent== +cat)
-          return(cat)
-         }
-        } else{
-          alert ('Please insert the correct item you are looking for .You can search by its name / category /ID / its price ! .')
-        }
-        
-      }
-      searchProd()
+    })
 
 
 
+// Add to favourites 
+//   let favourite=document.querySelectorAll('#view')
+//     favourite.addEventListener('click',()=>{
+//         alert(
+//     "You have added this item to your favourites !"
+
+//   )
+// })
+
+// Sorting my cart ..
+
+let sortLow=document.querySelector('#low')
+let sortHigh=document.querySelector('#high')
 
 
+//When I click on it 
+sortLow.addEventListener('click',(event)=>{
+let so=event.target.value
 
-    // let tbody=document.querySelector('tbody')
-    // tbody.innerHTML =''
-    // inputedItems.map(cart=>{
-    //     tbody.innerHTML += `
-    //     <tr>
-    //     <td>${cart.id}</td?
-    //     <td>${cart.name}</td>
-    //     <td>$${cart.category}</td>
-    //     <td><img src='${cart.image}'></td>
-    //     <td>${cart.description}</td>
-    //     <td>${cart.price}</td>
+displaySorted(so)
+})
 
-    //     </tr>
-        
-    //     `
-    // })
+  sortHigh.addEventListener('click',(event)=>{
+        let me=event.target.value
+        displaySorted(me)
+  })
+
+  function displaySorted(){
+      let sorted=cart.sort(this.price)
+    displayFiltered(sorted)
+
+  }
+  function priceSort(o){
+        let anotherSet=cart.sort(this.price)
+    displayFiltered(anotherSet)
+  }
+
+//  cart.sort(function(m,n){
+//   if(m.price < n.price){
+//      return -1
+//   }
+//   return 0
+//  })
+
+//   cart.sort(function(m,n){
+//   if(m.price < n.price){
+//      return -1;
+//   } if(m.price >n.price){
+//     return 1;
+//   }
+//   return 0;
+//  })
