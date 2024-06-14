@@ -136,3 +136,19 @@ displaySorted(so)
         let anotherSet=cart.sort(this.price)
     displayFiltered(anotherSet)
   }
+
+//  cart.sort(function(m,n){
+//   if(m.price < n.price){
+//      return -1
+//   }
+//   return 0
+//  })
+
+//   cart.sort(function(m,n){
+//   if(m.price < n.price){
+//      return -1;
+//   } if(m.price >n.price){
+//     return 1;
+//   }
+//   return 0;
+//  })
