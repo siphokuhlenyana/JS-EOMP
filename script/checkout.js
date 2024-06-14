@@ -2,6 +2,12 @@ localStorage.getItem('BoughtProducts')
 
 
 
+
+
+
+
+
+
 function writeData(){
     let tbody=document.querySelector('#tbody')
     tbody.innerHTML =''
