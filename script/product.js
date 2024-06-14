@@ -31,9 +31,9 @@ heading.textContent= "Catelogue"
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
-
+  let div=document.querySelector("#prod")
  function displayFiltered(c){
-   let div=document.querySelector("#prod")
+ 
    div.innerHTML = ''  
   c.forEach(item =>{
     div.innerHTML += `
@@ -142,24 +142,31 @@ displaySorted(so)
 let buy=document.querySelectorAll('.buy')
 let boughtProd=[]
 
-buy.addEventListener('click',(item)=>{
-    let bought=cart.find(item.price == buy.value)
-    let boughtStill=boughtProd.find(item.id == buy.value)
+buy.forEach(button =>{
+    button.addEventListener('click',()=>{
+    let bought=cart.find(item=>item.price == button.value)
+    let boughtStill=boughtProd.find(item=>item.id == bought.id)
 
     if(boughtStill){
         boughtStill .quantity++
         boughtStill= boughtStill.price *boughtStill.quantity
     } else {
         bought.quantity = 1
-        boughtProd.push(boughtStill)
+        boughtProd.push(bought)
     }
-        
+      localStorage.setItem('boughtProduct',JSON.stringify(boughtProd) )  
+  }) 
+
+})
+  
+//     
+     
     
     
 
-})
-localStorage=setItem('boughtProduct',JSON.stringify(boughtProd) 
-)
+// })
+
+
 
 
 

@@ -4,6 +4,7 @@
 
 body{
     font-family: "DM Sans", sans-serif;
+    margin: 2rem;
 }
 .navContainer{
     font-family: "DM Sans", sans-serif;
@@ -299,31 +300,10 @@ margin-left: 750px;
     align-items: center;
     justify-content: center;
     margin-top: 5px; 
-<<<<<<< HEAD
-    animation: slide 2s infinite linear;
-    color-scheme: red rgba(255, 255, 255, 0.585);
-
-   
-   width: 150px;
-}
-
-@keyframes slide{
-    from{
-        transform: translateX(100%);
-    }
-    to{
-        transform: translateX(-60%);
-}
-}
-.card{
-    background-color: black;
-    height: 150px;
-=======
 }
 .card{
     background-color: black;
     height: 200px;
->>>>>>> 36a2f2e ( Added styling)
 }
 
 #card{
@@ -408,15 +388,32 @@ footer{
     height: 50px;
    margin-left: 500px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-}
->>>>>>> 4c7ecdd (Added more stuff)
-=======
->>>>>>> 8b46609 ( Updates)
-=======
-=======
-}
->>>>>>> 36a2f2e ( Added styling)
->>>>>>> 4cf1072 ( Added styling)
+ #tableCart{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+ }
+
+ #mastercard ,#payapple {
+    border: 2px solid black;
+    border-radius:50%;
+ }
+
+ #confirm{
+    width: 300px;
+    height: 150px;
+    background-color:red ;
+  margin-left: 950px;
+
+    }
+
+    #Pay{
+        width: 150px;
+        height:40px;
+        margin-top: 80px;
+    }
+
+    #tot{
+        color: black;
+        font-weight: 600;
+    }
