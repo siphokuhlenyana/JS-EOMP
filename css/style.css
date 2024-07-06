@@ -4,39 +4,61 @@
 
 body{
     font-family: "DM Sans", sans-serif;
-    margin: 2rem;
+    /* margin: 2rem; */
 }
 .navContainer{
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-  background-color: white;
+  background-color:white;
   /* max-width:  100%; */
-<<<<<<< HEAD
-  max-width: 100vw;
-=======
-  width: 100vw;
->>>>>>> 36a2f2e ( Added styling)
+  width: 100%;
+  height:150px;
   /* height: 250vh; */
-  
+  color:red
 }
 .navbar{
     padding: 0;
     
+    
 }
-.nav-link:hover{
-    background-color: rgba(255, 0, 0, 0.719);
+.nav-link{
+    color:black;
+    font-size: large;
+}
 
+.nav-link:hover{
+    background-color: red;
+    border-radius: 20%;
+
+}
+.nav-link:active{
+    background-color: red;
+    border-radius: 20%;
 }
 
 .d-flex{
     margin-left: 20px;
 }
 
+#infoaedc{
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* display: flex;
+    justify-content: center; */
+    height: 100vh;
+    padding-top: 22px;
+}
+.team{
+    color: black;
+}
+
 #image{
     margin-top: 0;
     animation: wiggle 2s linear infinite;
+    margin-left: 10px;
 }
 @keyframes wiggle {
     0%, 7% {
@@ -72,21 +94,19 @@ body{
     align-items: center;
     justify-content: end; */
     /* background-image: url('https://siphokuhlenyana.github.io/ImagesPortfolio/thrift1.jpg'); */
-    background-image: -moz-linear-gradient(red,black);
+    background-color:linear-gradient(rgb(231, 16, 16) ,rgba(0, 0, 0, 0.425));
     background-image: url("https://siphokuhlenyana.github.io/ImagesPortfolio/IMG_0625.jpeg");
     
 
     /* background-image: -moz-linear-gradient(red ,black); */
-    background-size:contain; 
+    background-size:cover; 
     background-position: center;
     background-repeat:no-repeat; 
     padding: 300px 0;
     height: 1vh;
-<<<<<<< HEAD
-    max-width: 100vw;
-=======
->>>>>>> 36a2f2e ( Added styling)
+    width: 1000px;
 }
+
 #icons{
     margin-right: 50px;
     /* width: 200px;
@@ -116,9 +136,11 @@ body{
       }
 }
 #slogan{
-     background-color: rgba(128, 128, 128, 0.548);
+     /* background-color: rgba(128, 128, 128, 0.548); */
      width: 550px;
      margin-top: 0;
+     margin-left: 100px;
+     color: rgba(0, 0, 0, 0.699);
 
 }
 
@@ -128,19 +150,29 @@ body{
     font-weight: 600;
     font-style: normal;
     color:black;
-   display: flex;
+   /* display: flex;
    align-items: center;
-    justify-content:center;
+    justify-content:center; */
     border: 6px dotted rgba(255, 0, 0, 0.644);
-    
+    margin-left: 610px;
     border-radius: 18px;
-
+    width:300px;
+background-color: rgba(0, 0, 0, 0.325);
+color: antiquewhite;
     /* text-transform: uppercase; */
     /* background-image: url("https://siphokuhlenyana.github.io/ImagesPortfolio/IMG_0570.jpeg");
 background-repeat: repeat;
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 -webkit-font-smoothing: antialiased; */
+position:absolute;
+}
+@media (min-width :300px){
+    #introp{
+        text-size-adjust: 70%;
+        margin-left: 610px;
+        /* height:20% */
+    }
 }
 #aboutmain{
     background-image: linear-gradient(rgb(231, 16, 16) ,rgba(0, 0, 0, 0.425));
@@ -163,10 +195,10 @@ background-size: cover; */
     align-content: center;
     /* padding: 0 40px 40px 0; */
     margin-left: 40px;
-     /* padding-bottom: px; */
+     /* margin-bottom:5px; */
 }
 #carouselExampleInterval{
-    width: 150px;
+    width: 250px;
     height: 200px;
    
 }
@@ -185,10 +217,6 @@ margin-left: 750px;
 #main .container-fluid{
     background-image: linear-gradient(rgb(231, 16, 16) ,black);
     height: 5vh;
-<<<<<<< HEAD
-    max-width: 100vw;
-=======
->>>>>>> 36a2f2e ( Added styling)
 }
 
 #Products{
@@ -202,43 +230,18 @@ margin-left: 750px;
     height: 250px; */
     height: 400vh;
     background-image: linear-gradient(rgb(231, 16, 16) ,black);
-<<<<<<< HEAD
-    max-width: 300vw;
 }
-#sort ,#searchItems ,#search{
-    width: 350px;
-    height: 30px;
-     display: flex;
-    align-items: center;  
-    justify-content: center;
-    margin-top: 0;
-    padding-left: 100px;
-    background-color: black;
-    color: aliceblue;
-    text-align: start;
-}
-.dropdown-menu{
-    background-color: black;
-    
-}
-.dropdown-item{
-    color: aliceblue;
-}
-
-=======
-}
-#sort ,#searchItems ,#search{
+#sort ,#searchItems ,#search,#reset{
     width: 250px;
     height: 30px;
      /* display: flex;
     align-items: center;  */
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 50px;
     padding-left: 100px;
     background-color: black;
     color: aliceblue;
 }
->>>>>>> 36a2f2e ( Added styling)
 #show{
     margin-top: 1px;
     margin-left: 900px;
@@ -267,11 +270,32 @@ margin-left: 750px;
 }
 #prod{
     
-    margin-top: 5%;
+    margin-top: 2%;
     display: grid;
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(3,1fr);
+    /* padding-right: 400px; */
+  
+    
     
 }
+/* @media (min-width:300px){
+    #prod{
+   display:grid;
+   grid-template-columns: repeat(1,1fr); */
+/* padding-left:2px;
+width: 10rem;
+height: 50%; */
+
+    /* }
+    #card{
+        width:15rem;
+    }
+   
+} */
+
+/* #Products{
+    width:400px;
+} */
 #view,.buy{
     width: 50px;
     height: 50px;
@@ -301,22 +325,31 @@ margin-left: 750px;
     justify-content: center;
     margin-top: 5px; 
 }
+/* .container-fluid{
+    margin-left: 0;
+} */
 .card{
     background-color: black;
     height: 200px;
+    
 }
 
 #card{
-    margin: 50px ;
+    margin: 30px ;
+/* padding: 2px; */
+
+}
+@media (max-width :300px){
+    #card{
+    margin-left: 5px;     
+    margin-right: 5px;
+    }
+    #Products{
+        width:100%;
+    }
+   
 }
 
-<<<<<<< HEAD
-#images{
-    height:20rem ;
-}
-
-=======
->>>>>>> 36a2f2e ( Added styling)
 footer{
     display: flex;
     justify-content: center;
@@ -343,10 +376,6 @@ footer{
     align-items: center;
     justify-content: center;
     background-image: -moz-linear-gradient(red,black);
-<<<<<<< HEAD
-    max-width: 100vw;
-=======
->>>>>>> 36a2f2e ( Added styling)
 }
 
 #pic1 ,#pic2,#pic3{
@@ -354,7 +383,7 @@ footer{
 }
 #contact{
     margin: 0;
-<<<<<<< HEAD
+
 }
 
 #description{
@@ -377,17 +406,14 @@ footer{
 .nav-link.active{
     background-color: rgba(255, 0, 0, 0.77);
     border-radius: 30px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 8b46609 ( Updates)
+
 }
 
-#reset{
+/* #reset{
     width: 150px;
     height: 50px;
    margin-left: 500px;
-}
+} */
  #tableCart{
     display: flex;
     justify-self: center;

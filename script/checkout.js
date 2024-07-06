@@ -46,6 +46,13 @@ confirmation.innerHTML +=`
 </div>
 
 `
+// let ans=document.querySelector('#tot')
+// function grandTotal(){
+//     let total = ${item.price} * ${item.quantity}
+// }
+// ans.textContent += (${item.price} * ${item.quantity})
+
+
 
 
 let pay=document.querySelector("#Pay")

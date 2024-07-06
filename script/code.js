@@ -3,6 +3,12 @@
 let heading=document.querySelector('#contact')
 heading.textContent += 'Contact Us'
 
+
+
+const im= new Date();
+let footer=document.getElementById("jo")
+footer.innerHTML += im.getFullYear();
+
 // let footer =document.querySelector('.footer')
 // footer.innerHTML +=`
 

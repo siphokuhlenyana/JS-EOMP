@@ -1,44 +1,50 @@
-function CreateItem(id,name,category,image,description,price,quantity){
-    this.id=id 
-    this.name=name 
-    this.category=category 
-    this.image=image 
-    this.description =description 
-    this.price=price
-    this.quantity=quantity 
+function CreateItem(id, name, category, image, description, price, quantity) {
+  this.id = id
+  this.name = name
+  this.category = category
+  this.image = image
+  this.description = description
+  this.price = price
+  this.quantity = quantity
 }
 
-let item1 = new CreateItem(1 ,"Mocha","Dresses","https://siphokuhlenyana.github.io/eComPics/Mocha.png","This dresses can be easily worn to any event ,Da Gama Textiles Fabric ,3 Cats Original ShweShwe and a pleated bottomline.Cold water wash and do not bleach !.", 1400.00,1)
+let item1 = new CreateItem(1, "Mocha", "Dresses", "https://siphokuhlenyana.github.io/eComPics/Mocha.png", "This dresses can be easily worn to any event ,Da Gama Textiles Fabric ,3 Cats Original ShweShwe and a pleated bottomline.Cold water wash and do not bleach !.", 1400.00, 1)
 
-let item2=new CreateItem(2,"LillyFlow","Dresses","https://siphokuhlenyana.github.io/eComPics/LillyFlow.png","LillyFlow is a very fashionable dress that you can wear with any kind of shoe be it with heels , sneakers or a flat shoe it easily adapts to the mood you are in . You can wear it going out daytime and night time too.", 2000,1)
+let item2 = new CreateItem(2, "LillyFlow", "Dresses", "https://siphokuhlenyana.github.io/eComPics/LillyFlow.png", "LillyFlow is a very fashionable dress that you can wear with any kind of shoe be it with heels , sneakers or a flat shoe it easily adapts to the mood you are in . You can wear it going out daytime and night time too.", 2000, 1)
 
-let item3=new CreateItem(3,"TableMat","Kitchenware","https://siphokuhlenyana.github.io/eComPics/TableMat.jpeg","Essence of African touch that can be easily washed and setup the way you want .", 450.,1)
+let item3 = new CreateItem(3, "TableMat", "Kitchenware", "https://siphokuhlenyana.github.io/eComPics/TableMat.jpeg", "Essence of African touch that can be easily washed and setup the way you want .", 450., 1)
 
-let item4=new  CreateItem(4,"Overflow","Dresses","https://siphokuhlenyana.github.io/eComPics/Overflow.JPG","Mmmh this dress is giving elegant look and a bold outlook , it can be both hand washed and washed using a washing machine .", 3400.90,1)
+let item4 = new CreateItem(4, "Overflow", "Dresses", "https://siphokuhlenyana.github.io/eComPics/Overflow.JPG", "Mmmh this dress is giving elegant look and a bold outlook , it can be both hand washed and washed using a washing machine .", 3400.90, 1)
 
-let item5=new CreateItem(5,"RelyOn","T-shirts","https://siphokuhlenyana.github.io/eComPics/Tshirt.jpeg","Affordable T-shirt that can be worn with skirts or even trousers and it is 100% cotton .", 250.49,1)
+let item5 = new CreateItem(5, "RelyOn", "T-shirts", "https://siphokuhlenyana.github.io/eComPics/Tshirt.jpeg", "Affordable T-shirt that can be worn with skirts or even trousers and it is 100% cotton .", 250.49, 1)
 
-let cart=[item1,item2,item3,item4,item5]
+let item6 = new CreateItem(6, "Blue", "Dresses", "https://siphokuhlenyana.github.io/eComPics/Tshirt.jpeg", "Durable fabric qualify that can be easily worn with sandals , high heels and and any other flat shoe . This dress is a go- get me for traditional events such as lobola gatherings and etc.", 2000, 1)
+
+let item7 = new CreateItem(7, "Benny", "Knitware", "https://siphokuhlenyana.github.io/eComPics/Tshirt.jpeg", "Easily worn and  a necessity for winter season  it is 100% cotton .", 150, 1)
+
+let item8 = new CreateItem(8, "Stylish", "T-shirts", "https://siphokuhlenyana.github.io/eComPics/Tshirt.jpeg", "Dagama tops that are fashionable and can be worn with anything ", 500.90, 1)
+let cart = [item1, item2, item3, item4, item5,item6,item7,item8]
 
 
-localStorage.setItem('Cart',JSON.stringify(cart))
+localStorage.setItem('Cart', JSON.stringify(cart))
 
 
-let heading=document.querySelector('#heading')
-heading.textContent= "Catelogue"
+let heading = document.querySelector('#heading')
+heading.textContent = "Catelogue"
 
 
 const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
 const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
-  let div=document.querySelector("#prod")
- function displayFiltered(c){
- 
-   div.innerHTML = ''  
-  c.forEach(item =>{
+let div = document.querySelector("#prod")
+
+function displayFiltered(c) {
+
+  div.innerHTML = ''
+  c.forEach(item => {
     div.innerHTML += `
-    <div class="card" id="card" style="width: 18rem;height: 45rem;">
-    <img id="images" src='${item.image}'>
+    <div class="card justify-content-center" id="card" style="width: 20rem;height: 35rem;">
+    <img id="images" src='${item.image}' style="width:20rem;height:10rem;">
     <div class="card-body">
     <p id="prodName">${item.name}</p>
     <p id="price">R${item.price}</p>
@@ -67,37 +73,37 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 
   `
   })
- }
-  displayFiltered(cart)
+}
+displayFiltered(cart)
 
 
 
 
 // Targeting the list items under the filter btn
-          let filterByKitchen=document.querySelector("#kitchen")
-          let filterByDress=document.querySelector('#dresses')
+let filterByKitchen = document.querySelector("#kitchen")
+let filterByDress = document.querySelector('#dresses')
 
 // When I click on it
-      filterByDress.addEventListener('click',(event)=>{
-        let d =event.target.getAttribute('value')
+filterByDress.addEventListener('click', (event) => {
+  let d = event.target.getAttribute('value')
   writeData(d)
-  })
-        filterByKitchen.addEventListener('click',(event)=>{
-        let k= event.target.getAttribute('value')
-        writeData(k)
-        })
+})
+filterByKitchen.addEventListener('click', (event) => {
+  let k = event.target.getAttribute('value')
+  writeData(k)
+})
 
 // Displays the filtered data
-  function writeData(i){
-      let filtered=cart.filter(item=>item.category == i)
+function writeData(i) {
+  let filtered = cart.filter(item => item.category == i)
   displayFiltered(filtered)
 }
-  //  resets the page 
-    let resetBtn=document.querySelector('#reset')
-          resetBtn.addEventListener('click',()=>{
-       displayFiltered(cart)
-      
-    })
+//  resets the page 
+let resetBtn = document.querySelector('#reset')
+resetBtn.addEventListener('click', () => {
+  displayFiltered(cart)
+
+})
 
 
 
@@ -112,57 +118,58 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 
 // Sorting my cart ..
 
-let sortLow=document.querySelector('#low')
-let sortHigh=document.querySelector('#high')
+let sortLow = document.querySelector('#low')
+let sortHigh = document.querySelector('#high')
 
 
 //When I click on it 
-sortLow.addEventListener('click',(event)=>{
-let so=event.target.value
+sortLow.addEventListener('click', (event) => {
+  let so = event.target.value
 
-displaySorted(so)
+  displaySorted(so)
 })
 
-  sortHigh.addEventListener('click',(event)=>{
-        let me=event.target.value
-        displaySorted(me)
-  })
+sortHigh.addEventListener('click', (event) => {
+  let me = event.target.value
+  displaySorted(me)
+})
 
-  function displaySorted(){
-      let sorted=cart.sort(this.price)
-    displayFiltered(sorted)
+function displaySorted() {
+  let sorted = cart.sort(this.price)
+  displayFiltered(sorted)
 
-  }
-  function priceSort(o){
-        let anotherSet=cart.sort(this.price)
-    displayFiltered(anotherSet)
-  }
+}
+
+function priceSort(o) {
+  let anotherSet = cart.sort(this.price)
+  displayFiltered(anotherSet)
+}
 
 // Created an empty array for my cart-checkout , buy button to be targeted
-let buy=document.querySelectorAll('.buy')
-let boughtProd=[]
+let buy = document.querySelectorAll('.buy')
+let boughtProd = []
 
-buy.forEach(button =>{
-    button.addEventListener('click',()=>{
-    let bought=cart.find(item=>item.price == button.value)
-    let boughtStill=boughtProd.find(item=>item.id == bought.id)
+buy.forEach(button => {
+  button.addEventListener('click', () => {
+    let bought = cart.find(item => item.price == button.value)
+    let boughtStill = boughtProd.find(item => item.id == bought.id)
 
-    if(boughtStill){
-        boughtStill .quantity++
-        boughtStill= boughtStill.price *boughtStill.quantity
+    if (boughtStill) {
+      boughtStill.quantity++
+      boughtStill = boughtStill.price * boughtStill.quantity
     } else {
-        bought.quantity = 1
-        boughtProd.push(bought)
+      bought.quantity = 1
+      boughtProd.push(bought)
     }
-      localStorage.setItem('boughtProduct',JSON.stringify(boughtProd) )  
-  }) 
+    localStorage.setItem('boughtProduct', JSON.stringify(boughtProd))
+  })
 
 })
-  
+
 //     
-     
-    
-    
+
+
+
 
 // })
 
