@@ -339,16 +339,18 @@ height: 50%; */
 /* padding: 2px; */
 
 }
-@media (max-width :300px){
-    #card{
-    margin-left: 5px;     
-    margin-right: 5px;
+@media (max-width :350px){
+    #prod{
+    /* margin-left: 5px;     
+    margin-right: 5px; */
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    background-color: aqua;
     }
-    #Products{
-        width:100%;
-    }
-   
-}
+    /* #Products{
+        /* width:100%; */
+    } */
+    */
 
 footer{
     display: flex;
