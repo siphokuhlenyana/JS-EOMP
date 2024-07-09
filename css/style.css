@@ -108,9 +108,11 @@ body{
 }
 
 #icons{
-    margin-right: 50px;
+    margin-right: 40px;
     /* width: 200px;
     height: 150px; */
+    display: flex;
+    justify-content:space-around;
 }
 
 .slogan{
@@ -123,7 +125,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-top:0;
-    /* background-color: rgba(255, 20, 145, 0.51); */
+    background-color: rgba(255, 20, 145, 0.51);
    padding-top: 0;
    animation:ease 2s linear infinite;
 }
@@ -137,11 +139,11 @@ body{
 }
 #slogan{
      /* background-color: rgba(128, 128, 128, 0.548); */
-     width: 550px;
+     width: 700px;
      margin-top: 0;
      margin-left: 100px;
-     color: rgba(0, 0, 0, 0.699);
-
+     background-color: rgba(0, 0, 0, 0.325);
+  color: antiquewhite;
 }
 
 #introp{

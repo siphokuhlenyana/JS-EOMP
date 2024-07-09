@@ -22,7 +22,11 @@ function writeData(){
         `
     })
 } writeData()
-
+ function displaysNothing(){
+    if (tbody.innerHTML==""){
+        return ('There is nothing on your cart , go shop !')
+    }
+ }
 
 let icon1=document.querySelector('#cart')
 icon1.innerHTML +=`
