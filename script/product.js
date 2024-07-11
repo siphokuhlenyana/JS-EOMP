@@ -135,13 +135,28 @@ sortHigh.addEventListener('click', (event) => {
 })
 
 function displaySorted() {
-  let sorted = cart.sort(this.price)
+  let sorted = cart.sort(function(m,n){
+  if(m.price < n.price){
+     return -1
+  }
+  return 0
+ })
+
+  cart.sort(function(m,n){
+  if(m.price < n.price){
+     return -1;
+  } if(m.price >n.price){
+    return 1;
+  }
+  return 0;
+ })
   displayFiltered(sorted)
 
 }
 
 function priceSort(o) {
   let anotherSet = cart.sort(this.price)
+
   displayFiltered(anotherSet)
 }
 
@@ -178,18 +193,4 @@ buy.forEach(button => {
 
 
 
-//  cart.sort(function(m,n){
-//   if(m.price < n.price){
-//      return -1
-//   }
-//   return 0
-//  })
-
-//   cart.sort(function(m,n){
-//   if(m.price < n.price){
-//      return -1;
-//   } if(m.price >n.price){
-//     return 1;
-//   }
-//   return 0;
-//  })
+ 
