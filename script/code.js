@@ -1,7 +1,7 @@
 
 
-let heading=document.querySelector('#contact')
-heading.textContent += 'Contact Us'
+// let heading=document.querySelector('#contact')
+// heading.textContent = 'Contact Us'
 
 
 
