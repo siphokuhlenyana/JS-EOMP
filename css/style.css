@@ -26,6 +26,7 @@ body{
 .nav-link{
     color:black;
     font-size: large;
+    padding-left: 10px;
 }
 
 .nav-link:hover{
@@ -36,6 +37,7 @@ body{
 .nav-link:active{
     background-color: red;
     border-radius: 20%;
+    
 }
 
 .d-flex{
@@ -53,12 +55,15 @@ body{
 }
 .team{
     color: black;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
 
 #image{
     margin-top: 0;
-    animation: wiggle 2s linear infinite;
-    margin-left: 10px;
+    animation: wiggle 2s linear ;
+    margin-left: 50px;
 }
 @keyframes wiggle {
     0%, 7% {
@@ -176,6 +181,7 @@ position:absolute;
         /* height:20% */
     }
 }
+
 #aboutmain{
     background-image: linear-gradient(rgb(231, 16, 16) ,rgba(0, 0, 0, 0.425));
 height: 200vh;
@@ -234,16 +240,22 @@ margin-left: 750px;
     background-image: linear-gradient(rgb(231, 16, 16) ,black);
 }
 #sort ,#searchItems ,#search,#reset{
-    width: 250px;
+    width: 200px;
     height: 30px;
      /* display: flex;
     align-items: center;  */
-    justify-content: center;
+    /* justify-content: center; */
     margin-top: 50px;
-    padding-left: 100px;
+    padding-left: 2px;
     background-color: black;
     color: aliceblue;
+    margin-left: 0;
 }
+#reset{
+    padding-left: 0;
+    
+}
+
 #show{
     margin-top: 1px;
     margin-left: 900px;
@@ -341,22 +353,30 @@ height: 50%; */
 /* padding: 2px; */
 
 }
-@media (max-width :350px){
+@media (max-width :300px){
     #prod{
     /* margin-left: 5px;     
     margin-right: 5px; */
     display: grid;
     grid-template-columns: repeat(1,1fr);
-    background-color: aqua;
+   padding-left: 2px;
+   
     }
-    /* #Products{
-        /* width:100%; */
-    } */
+    #Products{
+        width:100%;
+        
+    }
+    #card{
+        width: 20rem;
+    }
+}
     */
 
 footer{
     display: flex;
     justify-content: center;
+    text-align: center;
+    padding-left: 200px;
 }
 #icons{
     display: flex;
@@ -379,14 +399,24 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: -moz-linear-gradient(red,black);
+    background-color:white;
 }
 
 #pic1 ,#pic2,#pic3{
     padding: 0;
+
+}
+#cimage{
+    margin-top: 0;
+    width: 250px;
+    padding-left:5px ;
+    padding-top: 0;
 }
 #contact{
     margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
 
 }
 
@@ -446,4 +476,26 @@ footer{
     #tot{
         color: black;
         font-weight: 600;
+    }
+
+    #forms{
+        width:fit-content;
+        height: 280px;
+    margin-left: 10px;
+    color: black;
+    background-color: red;
+    text-align: center;
+    }
+    #send{
+        background-color: black;
+        color: red;
+    }
+    #forms input ,textarea{
+        width:300px;
+        margin:1px;
+        display: block;
+        outline: none;
+        padding: 9px 7px 10px;
+        font-size: medium;
+        border-radius: 5px;
     }
